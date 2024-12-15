@@ -1,0 +1,46 @@
+</html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Flower Market</title>
+</head>
+<body>
+<div>
+    <h1>Flower Market</h1>
+    <p>
+        <a href="/items/add">Add New flower</a>
+    </p>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.color}"></td>
+            <td th:text="${item.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <a href="/items/red">Show red flower</a>
+
+    <div th:if="${redFlower}">
+
+        <p th:text="${redFlower}"></p>
+    </div>
+    </p>
+    <p>
+        <a href="/items/total">Total price of all flower</a>
+    <div th:if="${showTotal}">
+
+        <p th:text="${total}"></p>
+    </div>
+
+    </p>
+</div>
+</body>
+</html>
